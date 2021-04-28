@@ -1,6 +1,6 @@
 import { ListAllDevelopers } from '@/domain/usecases'
 import { Controller, HttpRequest, HttpResponse } from '@/presentation/protocols'
-import { serverError, success } from '@/presentation/helpers'
+import { badRequest, success } from '@/presentation/helpers'
 
 export class ListAllDevelopersController implements Controller {
   constructor (
@@ -12,7 +12,7 @@ export class ListAllDevelopersController implements Controller {
       const developers = await this.listAllDevelopers.listAll(params.query)
       return success(developers)
     } catch (error) {
-      return serverError()
+      return badRequest(error)
     }
   }
 }

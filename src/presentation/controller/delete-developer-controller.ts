@@ -1,6 +1,6 @@
 import { DeleteDeveloper } from '@/domain/usecases'
 import { Controller, HttpRequest, HttpResponse } from '@/presentation/protocols'
-import { serverError, success } from '@/presentation/helpers'
+import { noContent, badRequest } from '@/presentation/helpers'
 
 export class DeleteDeveloperController implements Controller {
   constructor (
@@ -10,12 +10,12 @@ export class DeleteDeveloperController implements Controller {
   async handle (params: HttpRequest): Promise<HttpResponse> {
     try {
       const { id } = params.params
-      const developer = await this.deleteDeveloper.delete({
+      await this.deleteDeveloper.delete({
         id
       })
-      return success(developer)
+      return noContent()
     } catch (error) {
-      return serverError()
+      return badRequest(error)
     }
   }
 }

@@ -1,7 +1,7 @@
 import { SexoModel } from '@/domain/models'
 import { AddDeveloper } from '@/domain/usecases'
 import { Controller, HttpRequest, HttpResponse } from '@/presentation/protocols'
-import { badRequest, serverError, success } from '@/presentation/helpers'
+import { badRequest, created } from '@/presentation/helpers'
 import { InvalidParamError, MissingParamError } from '@/presentation/errors'
 
 export class AddDeveloperController implements Controller {
@@ -28,9 +28,9 @@ export class AddDeveloperController implements Controller {
         hobby,
         datanascimento
       })
-      return success(developer)
+      return created(developer)
     } catch (error) {
-      return serverError()
+      return badRequest(error)
     }
   }
 }

@@ -1,5 +1,5 @@
-export const serverError = {
-  description: 'Error interno',
+export const notFoundError = {
+  description: 'Not Found Error',
   content: {
     'application/json': {
       schema: {

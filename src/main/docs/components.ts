@@ -1,6 +1,6 @@
-import { serverError, badRequest } from './components/index'
+import { notFoundError, badRequest } from './components/index'
 
 export default {
-  serverError,
+  notFoundError,
   badRequest
 }

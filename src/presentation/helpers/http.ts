@@ -1,9 +1,18 @@
 import { HttpResponse } from '@/presentation/protocols'
-import { ServerError } from '@/presentation/errors'
 
 export const success = (data: any): HttpResponse => ({
   statusCode: 200,
   body: data
+})
+
+export const created = (data: any): HttpResponse => ({
+  statusCode: 201,
+  body: data
+})
+
+export const noContent = (): HttpResponse => ({
+  statusCode: 204,
+  body: null
 })
 
 export const badRequest = (error: Error): HttpResponse => ({
@@ -11,7 +20,7 @@ export const badRequest = (error: Error): HttpResponse => ({
   body: error
 })
 
-export const serverError = (): HttpResponse => ({
-  statusCode: 500,
-  body: new ServerError()
+export const notFound = (error: Error): HttpResponse => ({
+  statusCode: 404,
+  body: error
 })

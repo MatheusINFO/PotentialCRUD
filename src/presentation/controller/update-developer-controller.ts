@@ -1,6 +1,6 @@
 import { UpdateDeveloper } from '@/domain/usecases'
 import { Controller, HttpRequest, HttpResponse } from '@/presentation/protocols'
-import { badRequest, serverError, success } from '@/presentation/helpers'
+import { badRequest, success } from '@/presentation/helpers'
 import { InvalidParamError } from '@/presentation/errors'
 import { SexoModel } from '@/domain/models'
 
@@ -21,7 +21,7 @@ export class UpdateDeveloperController implements Controller {
       })
       return success(developer)
     } catch (error) {
-      return serverError()
+      return badRequest(error)
     }
   }
 }
