@@ -1,4 +1,4 @@
-export const updateDeveloperParamsSchema = {
+export const addDeveloperParamsSchema = {
   type: 'object',
   properties: {
     nome: {
@@ -16,5 +16,6 @@ export const updateDeveloperParamsSchema = {
     datanascimento: {
       type: 'string'
     }
-  }
+  },
+  required: ['nome', 'sexo', 'idade', 'hobby', 'datanascimento']
 }

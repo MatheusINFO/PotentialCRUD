@@ -11,7 +11,7 @@ export const deleteDeveloperPath = {
       }
     }],
     responses: {
-      201: {
+      204: {
         description: 'Desenvolvedor removido com sucesso'
       },
       400: {
