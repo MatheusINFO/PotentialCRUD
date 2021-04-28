@@ -30,10 +30,9 @@ DOCKERIZAÇÃO
 Documentação com Swagger
 
 Testes unitários
-- ADD
+- INFRA
 
 #TODO
 #TESTES UNITÁRIOS 
-- DELETE
-- UPDATE
-- GET ALL / GET ONE
+- DATA
+- PRESENTATION
