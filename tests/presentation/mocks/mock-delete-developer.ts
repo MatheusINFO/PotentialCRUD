@@ -1,9 +1,8 @@
 import { DeleteDeveloper } from '@/domain/usecases'
-import { mockDeveloperResult } from '@/tests/domain/mocks'
 
 export class DeleteDeveloperSpy implements DeleteDeveloper {
   deleteDeveloperParams: DeleteDeveloper.Params
-  developer = mockDeveloperResult()
+  developer = null
 
   async delete (params: DeleteDeveloper.Params): Promise<DeleteDeveloper.Result> {
     this.deleteDeveloperParams = params

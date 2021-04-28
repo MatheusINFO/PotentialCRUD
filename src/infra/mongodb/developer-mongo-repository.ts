@@ -51,9 +51,8 @@ export class DeveloperRepository implements
 
   async delete (params: DeleteDeveloperRepository.Params): Promise<DeleteDeveloperRepository.Result> {
     const collection = await MongoHelper.findCollection('developers')
-    const result = await collection.findOneAndDelete({ _id: new ObjectId(params.id) })
-    const developer = result.value ? await MongoHelper.map(result.value) : []
-    return developer
+    await collection.findOneAndDelete({ _id: new ObjectId(params.id) })
+    return null
   }
 
   async update (params: UpdateDeveloperRepository.Params): Promise<UpdateDeveloperRepository.Result> {
