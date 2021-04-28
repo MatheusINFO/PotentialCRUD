@@ -29,5 +29,11 @@ DOCKERIZAÇÃO
 
 Documentação com Swagger
 
+Testes unitários
+- ADD
+
 #TODO
-- TESTES UNITÁRIOS E DE INTEGRAÇÃO 
+#TESTES UNITÁRIOS 
+- DELETE
+- UPDATE
+- GET ALL / GET ONE
