@@ -39,4 +39,20 @@ describe('Developer Mongo Repository', () => {
       expect(httpResponse.id).toEqual(developer._id)
     })
   })
+
+  describe('listAll()', () => {
+    it('Should return all developers on success', async () => {
+      const sut = makeSut()
+      const firstDeveloper = mockDeveloperParams()
+      const secondDeveloper = mockDeveloperParams()
+      await accountCollection.insertMany([
+        firstDeveloper,
+        secondDeveloper
+      ])
+      const httpResponse = await sut.listAll({ page: 1 })
+      expect(httpResponse[0].nome).toBe(firstDeveloper.nome)
+      expect(httpResponse[1].nome).toBe(secondDeveloper.nome)
+      expect(httpResponse[2].nome).toBe(undefined)
+    })
+  })
 })
