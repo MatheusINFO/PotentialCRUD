@@ -6,7 +6,7 @@ export default {
   openapi: '3.0.0',
   info: {
     title: 'Gazin API',
-    description: 'Potentital CRUD para api criada para a Gazin',
+    description: 'Potentital CRUD, api criada gerenciar desenvolvedores',
     version: '1.0.0'
   },
   tags: [{

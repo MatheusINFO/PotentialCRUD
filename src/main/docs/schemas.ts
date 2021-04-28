@@ -1,4 +1,5 @@
 import {
+  developersSchema ,
   updateDeveloperParamsSchema ,
   addDeveloperParamsSchema ,
   errorSchema ,
@@ -8,6 +9,7 @@ import {
 export default {
   error: errorSchema,
   developer: developerSchema,
+  developers: developersSchema,
   addDeveloperParams: addDeveloperParamsSchema,
   updateDeveloperParams: updateDeveloperParamsSchema
 }
