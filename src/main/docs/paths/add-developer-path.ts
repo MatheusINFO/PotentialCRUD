@@ -1,6 +1,6 @@
 export const addDeveloperPath = {
   post: {
-    tags: ['Developer'],
+    tags: ['Developers'],
     summary: 'Rota para cadastrar desenvolvedor',
     requestBody: {
       content: {
@@ -13,7 +13,7 @@ export const addDeveloperPath = {
     },
     responses: {
       201: {
-        description: 'Sucesso',
+        description: 'Desenvolvedor adicionado com sucesso',
         content: {
           'application/json': {
             schema: {

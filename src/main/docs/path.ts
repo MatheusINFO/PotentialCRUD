@@ -1,7 +1,9 @@
 import {
-  addDeveloperPath
+  addDeveloperPath,
+  deleteDeveloperPath
 } from './paths/index'
 
 export default {
-  '/developers': addDeveloperPath
+  '/developers': addDeveloperPath,
+  '/developers/{id}': deleteDeveloperPath
 }

@@ -1,3 +1,4 @@
+import paths from './path'
 import schemas from './schemas'
 import components from './components'
 
@@ -8,12 +9,10 @@ export default {
     description: 'Potentital CRUD para api criada para a Gazin',
     version: '1.0.0'
   },
-  servers: [{
-    url: ''
-  }],
   tags: [{
-    name: 'Developer'
+    name: 'Developers'
   }],
+  paths,
   schemas,
   components
 }
