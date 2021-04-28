@@ -23,8 +23,10 @@ Atualiza os dados de um desenvolvedor
 DELETE /developers/{id}
 Codes 204 / 400
 
-#TODO
-
-TESTES UNITÁRIOS E DE INTEGRAÇÃO 
 DOCKERIZAÇÃO
+- npm install
+- npm run docker
+
+#TODO
+TESTES UNITÁRIOS E DE INTEGRAÇÃO 
 DOCUMENTAÇÃO COM SWAGGER

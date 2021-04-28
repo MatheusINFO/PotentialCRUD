@@ -1,0 +1,22 @@
+version: "3"
+services:
+  mongo: 
+    container_name: mongodb
+    image: mongo:3
+    restart: always
+    volumes:
+      - ./data:/data/db
+    ports:
+      - "27017:27017"
+  api:
+    container_name: gazinapi
+    build: .
+    restart: always
+    image: gazin-api
+    command: npm start
+    volumes:
+      - ./dist:/usr/src/gazin/dist
+    ports:
+      - "5050:5050"
+    links:
+      - mongo  
