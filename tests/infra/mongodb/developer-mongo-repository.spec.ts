@@ -55,4 +55,17 @@ describe('Developer Mongo Repository', () => {
       expect(httpResponse[2].nome).toBe(undefined)
     })
   })
+
+  describe('delete()', () => {
+    it('Should delete a developer on success', async () => {
+      const sut = makeSut()
+      const result = await accountCollection.insertOne(mockDeveloperParams())
+      const developer = result.ops[0]
+      const beforeDelete = await accountCollection.count()
+      expect(beforeDelete).toBe(1)
+      await sut.delete(developer._id)
+      const afterDelete = await accountCollection.count()
+      expect(afterDelete).toBe(0)
+    })
+  })
 })
