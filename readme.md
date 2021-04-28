@@ -27,6 +27,7 @@ DOCKERIZAÇÃO
 - npm install
 - npm run docker
 
+Documentação com Swagger
+
 #TODO
-TESTES UNITÁRIOS E DE INTEGRAÇÃO 
-DOCUMENTAÇÃO COM SWAGGER
+- TESTES UNITÁRIOS E DE INTEGRAÇÃO 
