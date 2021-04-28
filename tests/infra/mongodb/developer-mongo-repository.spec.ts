@@ -68,4 +68,19 @@ describe('Developer Mongo Repository', () => {
       expect(afterDelete).toBe(0)
     })
   })
+
+  describe('update()', () => {
+    it('Should update a developer on success', async () => {
+      const sut = makeSut()
+      const result = await accountCollection.insertOne(mockDeveloperParams())
+      const developer = result.ops[0]
+      const updatedAccount = await sut.update({
+        id: developer._id,
+        developer: {
+          nome: 'Matheuszera'
+        }
+      })
+      expect(updatedAccount.nome).toBe('Matheuszera')
+    })
+  })
 })
