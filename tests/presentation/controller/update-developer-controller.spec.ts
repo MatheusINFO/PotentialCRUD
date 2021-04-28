@@ -14,7 +14,7 @@ const mockRequest = (): any => ({
   }
 })
 
-const mockInvalidRequest = (sexo): any => ({
+const mockInvalidRequest = (sexo: any): any => ({
   params: {
     id: faker.datatype.uuid()
   },

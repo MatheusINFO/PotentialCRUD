@@ -15,7 +15,7 @@ const mockRequest = (): any => ({
   }
 })
 
-const mockInvalidRequest = (nome, sexo): any => ({
+const mockInvalidRequest = (nome: string, sexo: any): any => ({
   body: {
     nome,
     idade: faker.datatype.number(),
