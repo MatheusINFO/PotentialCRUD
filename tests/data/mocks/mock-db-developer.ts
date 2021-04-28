@@ -1,4 +1,4 @@
-import { AddDeveloperRepository, DeleteDeveloperRepository, UpdateDeveloperRepository } from "@/data/protocols"
+import { AddDeveloperRepository, DeleteDeveloperRepository, ListAllDevelopersRepository, ListOneDeveloperRepository, UpdateDeveloperRepository } from "@/data/protocols"
 import { mockDeveloperResult } from "@/tests/domain/mocks"
 
 export class AddDeveloperRepositorySpy implements AddDeveloperRepository {
@@ -27,6 +27,29 @@ export class UpdateDeveloperRepositorySpy implements UpdateDeveloperRepository {
 
   async update(params: UpdateDeveloperRepository.Params): Promise<UpdateDeveloperRepository.Result> {
     this.updateDeveloperParams = params
+    return this.developer
+  }
+}
+
+export class ListOneDeveloperRepositorySpy implements ListOneDeveloperRepository {
+  listOneDeveloperParams: ListOneDeveloperRepository.Params
+  developer = mockDeveloperResult()
+
+  async listOne(params: ListOneDeveloperRepository.Params): Promise<ListOneDeveloperRepository.Result> {
+    this.listOneDeveloperParams = params
+    return this.developer
+  }
+}
+
+export class ListAllDevelopersRepositorySpy implements ListAllDevelopersRepository {
+  listAllDevelopersParams: ListAllDevelopersRepository.Params
+  developer = [
+    mockDeveloperResult(),
+    mockDeveloperResult()
+  ]
+
+  async listAll(params?: ListAllDevelopersRepository.Params): Promise<ListAllDevelopersRepository.Result> {
+    this.listAllDevelopersParams = params
     return this.developer
   }
 }
