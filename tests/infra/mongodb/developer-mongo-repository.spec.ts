@@ -61,10 +61,10 @@ describe('Developer Mongo Repository', () => {
       const sut = makeSut()
       const result = await accountCollection.insertOne(mockDeveloperParams())
       const developer = result.ops[0]
-      const beforeDelete = await accountCollection.count()
+      const beforeDelete = await accountCollection.countDocuments()
       expect(beforeDelete).toBe(1)
       await sut.delete(developer._id)
-      const afterDelete = await accountCollection.count()
+      const afterDelete = await accountCollection.countDocuments()
       expect(afterDelete).toBe(0)
     })
   })

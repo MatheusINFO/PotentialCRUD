@@ -33,7 +33,7 @@ export class DeveloperRepository implements
 
     const collection = await MongoHelper.findCollection('developers')
     const result = await collection.find(queryParams, pagination).toArray()
-    const total = await collection.estimatedDocumentCount()
+    const total = await collection.countDocuments()
     const developers = result ? await MongoHelper.mapCollection(result) : []
     developers.push({
       total: total,
