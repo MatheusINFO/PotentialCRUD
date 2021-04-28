@@ -15,7 +15,7 @@ services:
     image: gazin-api
     command: npm start
     volumes:
-      - ./dist:/usr/src/gazin/dist
+      - ./dist:/usr/src/api/dist
     ports:
       - "5050:5050"
     links:
