@@ -29,4 +29,14 @@ describe('Developer Mongo Repository', () => {
       expect(developer).toBeTruthy()
     })
   })
+
+  describe('listOne()', () => {
+    it('Should return an developer on success', async () => {
+      const sut = makeSut()
+      const result = await accountCollection.insertOne(mockDeveloperParams())
+      const developer = result.ops[0]
+      const httpResponse = await sut.listOne(developer._id)
+      expect(httpResponse.id).toEqual(developer._id)
+    })
+  })
 })
