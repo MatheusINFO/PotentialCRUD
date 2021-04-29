@@ -19,6 +19,9 @@ export class UpdateDeveloperController implements Controller {
         id,
         developer: params.body
       })
+      if (!developer) {
+        return badRequest(new InvalidParamError('id'))
+      }
       return success(developer)
     } catch (error) {
       return badRequest(error)
