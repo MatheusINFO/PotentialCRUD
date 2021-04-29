@@ -33,10 +33,12 @@
 ![alt text](./public/img/swagger.png "Swagger")
 
 >## Como executar - Api:
-(Com o Docker instalado, vá até a pasta e rode o seguinte comando)
+(É necessário do docker instalado, o backend irá usar a porta 5050 e o mongo a 27017)
+-  git clone https://github.com/MatheusINFO/PotentialCRUD.git (clone o repositório e vá até a pasta)
 -  npm install (irá instalar as dependências)
 -  npm run docker (irá fazer o build, chamar o docker-compose up e remover a pasta de testes)
 
 >## Como executar - Testes
+(Na pasta clona, execute os comandos)
 - npm install (caso não tenha feito)
 - npm run test (irá rodar todos os testes)
