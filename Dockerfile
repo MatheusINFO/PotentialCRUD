@@ -1,4 +1,4 @@
 FROM node:14
 WORKDIR /usr/src/api
 COPY ./package.json .
-RUN npm install --only=prod
+RUN yarn install --only=prod

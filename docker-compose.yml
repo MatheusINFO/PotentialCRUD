@@ -13,7 +13,7 @@ services:
     build: .
     restart: always
     image: gazin-api
-    command: npm start
+    command: yarn start
     volumes:
       - ./dist:/usr/src/api/dist
     ports:
