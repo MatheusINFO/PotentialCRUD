@@ -21,8 +21,8 @@ export const listOneDeveloperPath = {
           }
         }
       },
-      400: {
-        $ref: '#/components/badRequest'
+      404: {
+        $ref: '#/components/notFound'
       }
     }
   }
