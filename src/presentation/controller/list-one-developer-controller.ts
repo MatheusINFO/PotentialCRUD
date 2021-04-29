@@ -1,6 +1,6 @@
 import { ListOneDeveloper } from '@/domain/usecases'
 import { Controller, HttpRequest, HttpResponse } from '@/presentation/protocols'
-import { badRequest, success } from '@/presentation/helpers'
+import { notFound, success } from '@/presentation/helpers'
 
 export class ListOneDeveloperController implements Controller {
   constructor (
@@ -15,7 +15,7 @@ export class ListOneDeveloperController implements Controller {
       })
       return success(developer)
     } catch (error) {
-      return badRequest(error)
+      return notFound(error)
     }
   }
 }
