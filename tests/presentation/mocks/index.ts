@@ -1,5 +1,1 @@
-export * from './mock-add-developer'
-export * from './mock-delete-developer'
-export * from './mock-update-developer'
-export * from './mock-list-all-developer'
-export * from './mock-list-one-developer'
+export * from './mock-developer'

@@ -1,4 +1,10 @@
-import { AddDeveloperRepository, DeleteDeveloperRepository, ListAllDevelopersRepository, ListOneDeveloperRepository, UpdateDeveloperRepository } from "@/data/protocols"
+import { 
+  AddDeveloperRepository, 
+  DeleteDeveloperRepository, 
+  ListAllDevelopersRepository, 
+  ListOneDeveloperRepository,
+   UpdateDeveloperRepository 
+} from "@/data/protocols"
 import { mockDeveloperResult } from "@/tests/domain/mocks"
 
 export class AddDeveloperRepositorySpy implements AddDeveloperRepository {

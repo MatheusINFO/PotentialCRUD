@@ -1,7 +1,7 @@
 import { throwError } from '@/tests/domain/mocks'
 import { ListAllDevelopersController } from '@/presentation/controller'
 import { ListAllDevelopersSpy } from '@/tests/presentation/mocks'
-import { badRequest, success } from '@/presentation/helpers'
+import { notFound, success } from '@/presentation/helpers'
 
 const mockRequest = (): any => ({
   query: {}
@@ -34,7 +34,7 @@ describe('ListAllDevelopers Controller', () => {
     jest.spyOn(listAllDevelopersSpy, 'listAll').mockImplementationOnce(throwError)
     const request = mockRequest()
     const httpResponse = await sut.handle(request)
-    expect(httpResponse).toEqual(badRequest(new Error()))
+    expect(httpResponse).toEqual(notFound(new Error()))
   })
 
   it('Should return 200 on success', async () => {

@@ -2,7 +2,7 @@ import faker from 'faker'
 import { throwError } from '@/tests/domain/mocks'
 import { ListOneDeveloperController } from '@/presentation/controller'
 import { ListOneDeveloperSpy } from '@/tests/presentation/mocks'
-import { badRequest, success } from '@/presentation/helpers'
+import { notFound, success } from '@/presentation/helpers'
 
 const mockRequest = (): any => ({
   params: {
@@ -37,7 +37,7 @@ describe('ListOneDeveloper Controller', () => {
     jest.spyOn(listOneDeveloperSpy, 'listOne').mockImplementationOnce(throwError)
     const request = mockRequest()
     const httpResponse = await sut.handle(request)
-    expect(httpResponse).toEqual(badRequest(new Error()))
+    expect(httpResponse).toEqual(notFound(new Error()))
   })
 
   it('Should return 201 on success', async () => {
