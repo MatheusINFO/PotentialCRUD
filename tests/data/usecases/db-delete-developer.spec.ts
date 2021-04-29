@@ -39,10 +39,10 @@ describe('DbDeleteDeveloper Usecase', () => {
     await expect(promise).rejects.toThrow()
   })
 
-  it('Should return an null on success', async () => {
+  it('Should return a developer on success', async () => {
     const { sut, deleteDeveloperRepositorySpy } = makeSut()
     const developerData = mockDeveloperParams()
     await sut.delete(developerData)
-    expect(deleteDeveloperRepositorySpy.developer).toBe(null)
+    expect(deleteDeveloperRepositorySpy.developer).toBeTruthy()
   })
 })

@@ -19,7 +19,7 @@ export class AddDeveloperRepositorySpy implements AddDeveloperRepository {
 
 export class DeleteDeveloperRepositorySpy implements DeleteDeveloperRepository {
   deleteDeveloperParams: DeleteDeveloperRepository.Params
-  developer = null
+  developer = mockDeveloperResult()
 
   async delete(params: DeleteDeveloperRepository.Params): Promise<DeleteDeveloperRepository.Result> {
     this.deleteDeveloperParams = params

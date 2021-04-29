@@ -19,7 +19,7 @@ export class AddDeveloperSpy implements AddDeveloper {
 
 export class DeleteDeveloperSpy implements DeleteDeveloper {
   deleteDeveloperParams: DeleteDeveloper.Params
-  developer = null
+  developer = mockDeveloperResult()
 
   async delete (params: DeleteDeveloper.Params): Promise<DeleteDeveloper.Result> {
     this.deleteDeveloperParams = params
