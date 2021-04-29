@@ -1,6 +1,7 @@
 import { ListOneDeveloper } from '@/domain/usecases'
 import { Controller, HttpRequest, HttpResponse } from '@/presentation/protocols'
 import { notFound, success } from '@/presentation/helpers'
+import { InvalidParamError } from '@/presentation/errors'
 
 export class ListOneDeveloperController implements Controller {
   constructor (
@@ -13,6 +14,9 @@ export class ListOneDeveloperController implements Controller {
       const developer = await this.listOneDeveloper.listOne({
         id
       })
+      if (!developer) {
+        return notFound(new InvalidParamError('id'))
+      }
       return success(developer)
     } catch (error) {
       return notFound(error)

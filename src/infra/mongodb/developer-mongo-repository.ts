@@ -45,14 +45,14 @@ export class DeveloperRepository implements
   async listOne (params: ListOneDeveloperRepository.Params): Promise<ListOneDeveloperRepository.Result> {
     const collection = await MongoHelper.findCollection('developers')
     const result = await collection.findOne({ _id: new ObjectId(params.id) })
-    const developer = result ? await MongoHelper.map(result) : []
+    const developer = result && await MongoHelper.map(result)
     return developer
   }
 
   async delete (params: DeleteDeveloperRepository.Params): Promise<DeleteDeveloperRepository.Result> {
     const collection = await MongoHelper.findCollection('developers')
-    await collection.findOneAndDelete({ _id: new ObjectId(params.id) })
-    return null
+    const result = await collection.findOneAndDelete({ _id: new ObjectId(params.id) })
+    return result.value
   }
 
   async update (params: UpdateDeveloperRepository.Params): Promise<UpdateDeveloperRepository.Result> {
