@@ -24,6 +24,7 @@
 - O Sexo aceita "M" (Masculino) e "F" (Feminino)
 - A listagem com queryString e paginação aceita todos campos (nome, sexo, idade, hobby, datanascimento e page para paginação), ex: /developers?nome=Matheus&sexo=M&page=2, irá listar todos os desenvolvedores encontrados com nome Matheus e sexo Masculino na página 2
 - Cada página tem 5 usuários e caso não informada irá retornar todos
+- Para datas utilizei o formato padrão do html yyyy-MM-dd
 
 >## Swagger
 - A documentação com o Swagger é bem fácil de usar, basta acessar a rota /docs e executar, ele funciona parecido com o insomnia, porém serve de documentação também :D
