@@ -1,5 +1,5 @@
-export const notFoundError = {
-  description: 'Not Found Error',
+export const notFound = {
+  description: 'Rota não encontrada',
   content: {
     'application/json': {
       schema: {

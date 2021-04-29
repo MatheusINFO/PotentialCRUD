@@ -56,8 +56,8 @@ export const listAllDevelopersPath = {
           }
         }
       },
-      400: {
-        $ref: '#/components/badRequest'
+      404: {
+        $ref: '#/components/notFound'
       }
     }
   }
