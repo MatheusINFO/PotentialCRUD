@@ -9,7 +9,7 @@
     "test:staged": "npm test -- --findRelatedTests",
     "build": "rimraf dist && tsc -p tsconfig-build.json",
     "start": "node dist/main/server.js",
-    "docker": "npm run build && docker-compose up"
+    "docker": "npm run build && docker-compose up -d"
   },
   "devDependencies": {
     "@shelf/jest-mongodb": "^1.2.4",
