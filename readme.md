@@ -35,7 +35,7 @@
 >## Como executar - Api:
 (É necessário do docker instalado, o backend irá usar a porta 5050 e o mongo a 27017)
 -  git clone https://github.com/MatheusINFO/PotentialCRUD.git (clone o repositório e vá até a pasta)
--  npm install (irá instalar as dependências)
+-  npm install (irá instalar as dependências, utilizei a v.7 do npm, caso precise para atualizar use npm i -g npm@latest)
 -  npm run docker (irá fazer o build, chamar o docker-compose up e remover a pasta de testes)
 
 >## Como executar - Testes
