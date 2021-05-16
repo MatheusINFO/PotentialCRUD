@@ -11,7 +11,7 @@
 
 >## Oque foi utilizado:
 -  NodeJS + TypeScript (Construção da API)
--  MongoDB (Banco não relacional)
+-  MongoDB (Banco não relacional) 
 -  Clean Architecture (Estruturação do projeto)
 -  Husky (Padronização de commit e push)
 -  Lint staged (Auxiliar o husky na padronização)
